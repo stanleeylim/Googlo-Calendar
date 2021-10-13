@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoogLO Calendar</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="calendar.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="menu-icon" onclick="toggleSideSection()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="logo">
+                <img src="assets/googlo.png" alt="no image available" width="130px" height="40px">
+            </div>
+            <div class="logo-title">
+                <span>Calendar</span>
+            </div>
+            <div class="buttons">
+                <button>TODAY</button>
+                <button>All Schedule</button>
+            </div>
+        </nav>
+    </header>
+    <section class="side-section" style="width: 350px;">
+        <div class="calendar">
+            <div class="calendar-header">
+                <span id="calendar-header-month"></span>
+                <div class="calendar-header-button">
+                    <span onclick="previousMonth()"><</span>
+                    <span onclick="nextMonth()">></span>
+                </div>
+            </div>
+            <div class="calendar-body">
+                <table>
+                    <thead>
+                        <th>S</th>
+                        <th>M</th>
+                        <th>T</th>
+                        <th>W</th>
+                        <th>T</th>
+                        <th>F</th>
+                        <th>S</th>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="clock">
+            <span id="live-clock"></span>
+        </div>
+    </section>
+    <section class="main">
+
+    </section>
+
+    <script src="calendar.js" onload="initialCalendarLoad()"></script>
+</body>
+
+</html>

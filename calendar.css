@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.calendar{
+    margin: 10px;
+    color: #808080;
+    padding-right: 10px;
+    padding-left: 10px;
+    transition: .5;
+}
+
+/* CALENDAR HEADER */
+
+.calendar-header{
+    font-weight: bold;
+}
+
+.calendar-header-button{
+    text-align: right;
+}
+
+.calendar-header-button span{
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.calendar-header-button span:hover{
+    cursor: pointer;
+}
+
+/* CALENDAR BODY */
+.calendar-body table{
+    margin-top: 15px;
+}
+.calendar-body table thead th{
+    width: 50px;
+    text-align: center;
+}
