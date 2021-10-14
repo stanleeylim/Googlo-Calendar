@@ -6,21 +6,23 @@
 }
 
 .calendar{
-    margin: 10px;
     color: #808080;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding: 20px;
     transition: .5;
+    font-size: 13px;
+    border-bottom: 1px solid #808080;
 }
 
 /* CALENDAR HEADER */
 
 .calendar-header{
     font-weight: bold;
+    margin-left: 15px;
 }
 
 .calendar-header-button{
-    text-align: right;
+    float: right;
+    margin-right: 15px;
 }
 
 .calendar-header-button span{
@@ -36,7 +38,24 @@
 .calendar-body table{
     margin-top: 15px;
 }
-.calendar-body table thead th{
+
+.calendar-body table thead th, .calendar-body table tbody tr td{
     width: 50px;
     text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.calendar-body table tbody tr td:hover{
+    cursor: pointer;
+}
+
+.calendar-body table tbody tr td:not(.current-date){
+    color: #000000;
+}
+
+.current-date{
+    background-color: #4285F4;
+    color: #ffffff;
+    border-radius: 50%;
 }

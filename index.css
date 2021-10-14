@@ -70,6 +70,7 @@ header nav > div{
 
 /* SIDE SECTION */
 .side-section{
+    position: relative;
     height: 100vh;
     border-right: 1px solid #808080;
     transition: .5s;
@@ -77,11 +78,13 @@ header nav > div{
 }
 
 .clock{
+    position: absolute;
     height: 200px;
     font-size: 50px;
     text-align: center;
-    margin-top: 100px;
     transition: .5s;
+    bottom: 100px;
+    left: 70px;
 }
 
 

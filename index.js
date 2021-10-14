@@ -20,7 +20,7 @@ const toggleSideSection = () => {
         document.getElementsByClassName("side-section")[0].style.width = "350px";
         document.getElementsByClassName("main")[0].style.marginLeft = "350px";
         document.getElementsByClassName("clock")[0].style.marginLeft = "5px";
-        document.getElementsByClassName("calendar")[0].style.marginLeft = "10px"
+        document.getElementsByClassName("calendar")[0].style.marginLeft = "0"
     }
 }
 
