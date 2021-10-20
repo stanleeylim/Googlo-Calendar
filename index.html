@@ -31,40 +31,74 @@
             </div>
         </nav>
     </header>
-    <section class="side-section" style="width: 350px;">
-        <div class="calendar">
-            <div class="calendar-header">
-                <span id="calendar-header-month"></span>
-                <div class="calendar-header-button">
-                    <span onclick="previousMonth()"><</span>
-                    <span onclick="nextMonth()">></span>
+    <section class="container">
+        <section class="side-section" style="width: 350px;">
+            <div class="calendar">
+                <div class="calendar-header">
+                    <span id="calendar-header-month"></span>
+                    <div class="calendar-header-button">
+                        <span onclick="previousMonth()"><</span>
+                        <span onclick="nextMonth()">></span>
+                    </div>
+                </div>
+                <div class="calendar-body">
+                    <table>
+                        <thead>
+                            <th>S</th>
+                            <th>M</th>
+                            <th>T</th>
+                            <th>W</th>
+                            <th>T</th>
+                            <th>F</th>
+                            <th>S</th>
+                        </thead>
+                        <tbody id="calendar-body-table">
+    
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div class="calendar-body">
-                <table>
-                    <thead>
-                        <th>S</th>
-                        <th>M</th>
-                        <th>T</th>
-                        <th>W</th>
-                        <th>T</th>
-                        <th>F</th>
-                        <th>S</th>
-                    </thead>
-                    <tbody id="calendar-body-table">
+            <div class="clock">
+                <span id="live-clock"></span>
+            </div>
+        </section>
+    
+        <section class="main">
+            <!-- ADD EVENT POPUP -->
+            <div class="add-event-popup">
+                <div class="add-event-popup-content">
+                    <span id="close" onclick="closeAddEventPopup()">&times;</span>
+                    <h3>Add Event</h3>
+                    <form autocomplete="off" onsubmit="submitEvent()">
+                        <input type="text" name="event-title" id="event-title" placeholder="Add title" required>
+                        <input type="submit" value="SAVE"> <br>
+                        <input type="date" name="event-date" id="event-date" required>
+                        <input type="time" name="event-time" id="event-time" required>
+                        <input type="checkbox" name="ad-cb" id="ad-cb" onchange="setAllDay()">
+                        <label for="ad-cb">All Day</label>
+                    </form>
+                </div>
+            </div>
+            <!-- ADD EVENT BUTTON -->
+            <div class="btn-add-container">
+                <button onclick="addEvent()" id="btn-add">+</button>
+            </div>
+            
+            <div id="no-schedule-text">
+                No Schedule Available
+            </div>
+            <!-- VIEW EVENTS -->
+            <div class="events">
+                <table id="events-table">
 
-                    </tbody>
                 </table>
             </div>
-        </div>
-        <div class="clock">
-            <span id="live-clock"></span>
-        </div>
+        </section>
     </section>
-    <section class="main">
-
-    </section>
-
+    
+    <div class="add-event-popup-bg">
+            
+    </div>
     <script src="calendar.js" onload="initialCalendarLoad()"></script>
 </body>
 

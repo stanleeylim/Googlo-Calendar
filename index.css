@@ -68,6 +68,10 @@ header nav > div{
     cursor: pointer;
 }
 
+.container{
+    position: relative;
+}
+
 /* SIDE SECTION */
 .side-section{
     position: relative;
@@ -90,6 +94,133 @@ header nav > div{
 
 /* MAIN SECTION */
 .main{
-    padding: 16px;
+    position: absolute;
     transition: .5s;
+    height: 100vh;
+    left: 350px;
+    width: 100%;
+}
+
+.btn-add-container{
+    position: fixed;
+    right: 25px;
+    bottom: 30px;
+}
+
+/* Add event button */
+
+.btn-add-container #btn-add{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #DB4437;
+    color: #ffffff;
+    font-size: 25px;
+    border: none;
+    box-shadow: 1px 1px 6px #000000;
+}
+
+.btn-add-container #btn-add:hover{
+    cursor: pointer;
+}
+
+/* Add Event Popup */
+.add-event-popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%, -50%);
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    display: none;
+    max-width: 50%;
+    background-color: #ffffff;
+    z-index: 1;
+    box-shadow: 0.5px 0.5px 7px #000000;
+}
+
+.add-event-popup-content{
+    padding: 30px;
+}
+
+.add-event-popup .add-event-popup-content h3{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.add-event-popup .add-event-popup-content #close{
+    float: right;
+    font-weight: bold;
+    color: #808080;
+}
+
+.add-event-popup .add-event-popup-content #close:hover, .add-event-popup .add-event-popup-content form input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+.add-event-popup .add-event-popup-content form > input[type="text"], .add-event-popup .add-event-popup-content form > input[type="date"], .add-event-popup .add-event-popup-content form > input[type="time"] {
+    margin: 10px;
+    padding: 8px;
+    background: #F2F2F2;
+    border: none;
+}
+
+.add-event-popup, .add-event-popup-content form input[type="text"]{
+    width: 70%;
+}
+
+.add-event-popup .add-event-popup-content form input[type="submit"]{
+    background: #4285F4;
+    border: none;
+    padding: 8px;
+    width: 100px;
+    color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0.5px 0.5px 6px #000000;
+    font-weight: bold;
+}
+
+.add-event-popup-bg{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0px;
+    display: none;
+    background-color: #000000;
+    opacity: 0.5;
+}
+
+
+#event-time:disabled{
+    background-color: #d9d9d9;
+}
+
+#no-schedule-text{
+    position: fixed;
+    font-size: 23px;
+    color: #808080;
+    top: 50%;
+    left: 45%;
+
+}
+
+/* EVENTS TABLE */
+.events #events-table, .events #events-table tr td{
+    border-bottom: 1px solid #808080;
+    border-collapse: collapse;
+}
+
+.events #events-table tr .event-name{
+    font-weight: bold;
+}
+
+.events #events-table{
+    width: 74%;
+    table-layout: fixed;
+    transition: .5;
+}
+
+.events #events-table tr td {
+    padding: 20px;
 }

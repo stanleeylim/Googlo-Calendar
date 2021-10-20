@@ -23,6 +23,7 @@
 .calendar-header-button{
     float: right;
     margin-right: 15px;
+    user-select: none;
 }
 
 .calendar-header-button span{
@@ -35,12 +36,15 @@
 }
 
 /* CALENDAR BODY */
+.calendar-body{
+    margin-top: 10px;
+}
+
 .calendar-body table{
-    margin-top: 15px;
+    width: 100%;
 }
 
 .calendar-body table thead th, .calendar-body table tbody tr td{
-    width: 50px;
     text-align: center;
     padding: 10px;
     font-weight: bold;
