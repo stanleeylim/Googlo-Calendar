@@ -106,7 +106,7 @@ const generateEventsTable = (arr) => {
         cellEventName.appendChild(eventNameText);
         cellEventDate.appendChild(eventDateText);
         cellEventTime.appendChild(eventTimeText);
-        cellEventName.classList.add("event-name")
+        cellEventName.classList.add("event-name");
         row.appendChild(cellEventDate);
         row.appendChild(cellEventTime);
         row.appendChild(cellEventName);
@@ -120,8 +120,37 @@ const sortEvents = (arr) => {
     });
 }
 
-const viewEventsByDate = () => {
+const viewEventsByDate = (x) => {
+    //get clicked date
+    let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    let clickedDate = x.innerText;
+    let clickedMonthYear = document.querySelector("#calendar-header-month").innerHTML;
+    let clickedMonthYearArr = clickedMonthYear.split(' ');
+    let clickedMonth = clickedMonthYearArr[0].slice(0,3);
+    let clickedYear = clickedMonthYearArr[1];
+    let date = clickedYear + '-' + (months.indexOf(clickedMonth)+1) + '-' + clickedDate;
+    //filter events based on clicked date
+    let events = sortEvents(getEvent());
+    let filteredEvents = events.filter((item) => {
+        return item.event_date === date;
+    })
+    console.log(filteredEvents);
+    //clear table child
+    let tableChild = document.getElementById("events-table");
+    tableChild.innerHTML = "";
+    //view events
+    if(filteredEvents.length !== 0){
+        document.querySelector("#no-schedule-text").style.display = "none";
+        generateEventsTable(filteredEvents);
+    }else{
+        document.querySelector("#no-schedule-text").style.display = "block";
+    }
+}
 
+const viewAllSchedule = () => {
+    let tableChild = document.getElementById("events-table");
+    tableChild.innerHTML = "";
+    viewAllEvents();
 }
 
 setInterval(time, 1000)

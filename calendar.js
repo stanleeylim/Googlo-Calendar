@@ -70,6 +70,9 @@ const setCalendarBody = (month, year, numberOfDays) => {
            }else{
                cell = document.createElement("td");
                cellText = document.createTextNode(date);
+               cellFunc = document.createAttribute("onclick");
+               cellFunc.value = "viewEventsByDate(this)";
+               cell.attributes.setNamedItem(cellFunc);
                cell.appendChild(cellText);
                //color today's date
                if(date === currentDate && month === currentMonth && year === currYear){
